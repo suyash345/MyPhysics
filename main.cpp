@@ -24,7 +24,7 @@ class cir : public Shape {
 
         //
         float speed = 0;
-        float acceleration = 9.81;
+        float acceleration = 2;
 
 };
 
