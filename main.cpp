@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <iostream>
 
 class Shape {
 
@@ -14,6 +15,7 @@ class cir : public Shape {
         }
         void Draw() {
             DrawCircleV(centre,radius,color);
+            std::cout << speed << std::endl;
         }
     public:
         Vector2 centre;
@@ -56,7 +58,7 @@ int main() {
         float delta = GetFrameTime();
         c.Update(delta);
         r.Update(delta);
-        if(CheckCollisionCircleRec(c.centre,c.radius,r.r)) {
+        if(CheckCollisionCircleRec(c.centre,c.radius,r.r) &&  c.speed>0) {
             c.speed = c.speed*-1;
         }
 
